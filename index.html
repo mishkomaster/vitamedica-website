@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitamedica - 3M Littmann Classic III</title>
+    <meta
+      name="description"
+      content="Premium 3M Littmann Classic III Stethoscopes"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+      /* Base Styles */
+      :root {
+        --primary: #02225d;
+        --primary-light: #e5deff;
+        --primary-dark: #02225d;
+        --accent: #403e43;
+        --accent-light: #14b1c1;
+        --medical-light: #f8f9fc;
+        --medical: #f1f3f9;
+        --medical-dark: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--accent);
+        background-color: var(--medical-light);
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        transform: scale(1.05);
+      }
+
+      .btn-light {
+        background-color: white;
+        color: var(--primary);
+      }
+
+      .btn-light:hover {
+        background-color: var(--primary-light);
+        transform: scale(1.05);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 5rem 0 8rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .hero-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .hero-content {
+        text-align: left;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: var(--primary-light);
+        color: var(--primary);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 3.5rem;
+        }
+      }
+
+      .hero-description {
+        font-size: 1.125rem;
+        color: var(--accent-light);
+        margin-bottom: 2rem;
+        max-width: 32rem;
+      }
+
+      .color-options {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .color-swatch {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .black {
+        background-color: #2b2b2b;
+      }
+
+      .red {
+        background-color: #db1b34;
+      }
+
+      .blue {
+        background-color: #152c5e;
+      }
+
+      .emerald {
+        background-color: #028a75;
+      }
+
+      .rosegold {
+        background-color: #7f0745;
+      }
+
+      .purple {
+        background-color: #6a6094;
+      }
+
+      .hero-image {
+        position: relative;
+      }
+
+      .image-container {
+        position: relative;
+        aspect-ratio: 1;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .price-tag {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(4px);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .price-label {
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .price-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      /* Features Section */
+      .features {
+        background-color: white;
+        padding: 6rem 0;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      @media (min-width: 768px) {
+        .features-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .feature-card {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature-card i {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-card p {
+        color: var(--accent-light);
+      }
+
+      /* Products Section */
+      .products {
+        background-color: var(--medical);
+        padding: 6rem 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-header p {
+        color: var(--accent-light);
+        max-width: 32rem;
+        margin: 0 auto;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .products-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .product-card {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card.featured {
+        border: 2px solid var(--primary);
+        transform: scale(1.05);
+      }
+
+      .rating {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .product-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-card p {
+        color: var(--accent-light);
+        margin-bottom: 1rem;
+      }
+
+      .price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      /* CTA Section */
+      .cta {
+        background-color: var(--primary);
+        color: white;
+        padding: 5rem 0;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta p {
+        opacity: 0.9;
+        max-width: 32rem;
+        margin: 0 auto 2rem;
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background-color: transparent;
+        padding: 1rem 0;
+        padding-top: 5px;
+      }
+
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .logo img {
+        width: 70px; /* Adjust size as needed */
+        height: 70px; /* Adjust size as needed */
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-grow: 1;
+        justify-content: center;
+      }
+
+      .nav-links .btn {
+        padding: 0.5rem 1rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .navbar{
+          display: none;
+        }
+      }
+
+      /* Remove underline from anchor tags */
+      a {
+        text-decoration: none; /* Remove underline */
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="#features" class="btn btn-light">Features</a>
+          <a href="#products" class="btn btn-light">Collection</a>
+          <a href="" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content fade-in">
+              <span class="badge">Only for heroes!</span>
+              <h1>3M™ Littmann®<br />Classic III™</h1>
+              <p class="hero-description">
+                Experience superior acoustics and exceptional build quality with
+                the world's most popular stethoscope.
+              </p>
+              <div class="color-options">
+                <div
+                  class="color-swatch"
+                  title="Pink Edition"
+                  onclick="changeHeroImage('pink')"
+                  style="background-color: pink"
+                ></div>
+                <div
+                  class="color-swatch black"
+                  title="Black Edition"
+                  onclick="changeHeroImage('black')"
+                ></div>
+                <div
+                  class="color-swatch red"
+                  title="Red Edition"
+                  onclick="changeHeroImage('red')"
+                ></div>
+                <div
+                  class="color-swatch blue"
+                  title="Blue Edition"
+                  onclick="changeHeroImage('blue')"
+                ></div>
+                <div
+                  class="color-swatch emerald"
+                  title="Emerald Edition"
+                  onclick="changeHeroImage('emerald')"
+                ></div>
+                <div
+                  class="color-swatch rosegold"
+                  title="Rose-Gold Edition"
+                  onclick="changeHeroImage('rosegold')"
+                ></div>
+                <div
+                  class="color-swatch purple"
+                  title="Purple Edition"
+                  onclick="changeHeroImage('purple')"
+                ></div>
+              </div>
+              <a href="#products" class="btn btn-primary"
+                >Explore Color Collection</a
+              >
+            </div>
+            <div class="hero-image fade-in">
+              <div class="image-container">
+                <img
+                  id="heroImage"
+                  src="litman.png"
+                  alt="3M Littmann Classic III Stethoscope"
+                />
+                <div class="price-tag">
+                  <p class="price-label">Starting from</p>
+                  <p class="price-amount">79.99€</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features" id="features">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card fade-in">
+              <i data-feather="heart"></i>
+              <h3>Superior Acoustics</h3>
+              <p>
+                High-quality tubing and chest piece design for crystal clear
+                sound transmission
+              </p>
+            </div>
+            <div class="feature-card fade-in">
+              <i data-feather="shield"></i>
+              <h3>2-Year Warranty</h3>
+              <p>Backed by 3M's commitment to quality and durability</p>
+            </div>
+            <div class="feature-card fade-in">
+              <i data-feather="award"></i>
+              <h3>Trusted Quality</h3>
+              <p>Preferred by healthcare professionals globally</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Showcase -->
+      <section class="products" id="products">
+        <div class="container">
+          <div class="section-header">
+            <h2>Classic III™ Color Collection</h2>
+            <p>
+              Express your style with our wide range of Classic III™ colors,
+              each maintaining the same exceptional quality.
+            </p>
+          </div>
+          <div class="products-grid">
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="litman.png"
+                alt="3M Littmann Classic III Stethoscope - Pink Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Pink Edition</h3>
+              <p>A vibrant choice that stands out in any setting.</p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="black.png"
+                alt="3M Littmann Classic III Stethoscope - Black Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Black Edition</h3>
+              <p>The timeless choice for a professional look.</p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="red.png"
+                alt="3M Littmann Classic III Stethoscope - Red Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Red Edition</h3>
+              <p>
+                Bold and bright, perfect for those who want to make a statement.
+              </p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="blue.png"
+                alt="3M Littmann Classic III Stethoscope - Blue Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Blue Edition</h3>
+              <p>A classic color that complements any medical attire.</p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="emerald.png"
+                alt="3M Littmann Classic III Stethoscope - Emerald Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Emerald Edition</h3>
+              <p>Rich green tones that bring a touch of elegance.</p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="rosegold.png"
+                alt="3M Littmann Classic III Stethoscope - Rose Gold Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Rose Gold Edition</h3>
+              <p>
+                Stylish and sophisticated, perfect for modern professionals.
+              </p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-card fade-in">
+              <div class="rating">★★★★★</div>
+              <img
+                src="purple.png"
+                alt="3M Littmann Classic III Stethoscope - Purple Edition"
+                style="display: block; margin: 0 auto; height: 220px"
+              />
+              <h3>Classic III™ Purple Edition</h3>
+              <p>A regal color that adds a touch of luxury to your practice.</p>
+              <div class="price">79.99€</div>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <h2>Ready to Elevate Your Practice?</h2>
+          <p>
+            Join thousands of healthcare professionals who trust Vitamedica for
+            their medical equipment needs.
+          </p>
+          <button class="btn btn-light">Shop Now</button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Initialize Feather Icons
+      feather.replace();
+
+      // Intersection Observer for fade-in animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
+      });
+
+      // Function to change the hero image based on selected color
+      function changeHeroImage(color) {
+        const heroImage = document.getElementById("heroImage");
+        switch (color) {
+          case "pink":
+            heroImage.src = "litman.png";
+            break;
+          case "black":
+            heroImage.src = "black.png";
+            break;
+          case "red":
+            heroImage.src = "red.png";
+            break;
+          case "blue":
+            heroImage.src = "blue.png";
+            break;
+          case "emerald":
+            heroImage.src = "emerald.png";
+            break;
+          case "rosegold":
+            heroImage.src = "rosegold.png";
+            break;
+          case "purple":
+            heroImage.src = "purple.png";
+            break;
+          default:
+            heroImage.src = "litman.png"; // Default image
+        }
+      }
+    </script>
+  </body>
+</html>
